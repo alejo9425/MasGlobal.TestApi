@@ -1,0 +1,58 @@
+﻿@model List<MasGlobal.TestApi.DTO.Employee.DTOEmployee>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Global/_Layout.cshtml";
+}
+<link href="~/Content/grid.css" rel="stylesheet">
+<div class="container">
+    <div class="card border-0 shadow my-5">
+        <div class="card-body p-5">
+
+            <main role="main">
+                <div class="container">
+                    <h1>Senior .NET Developer Hands On Test</h1>
+                    <div class="row justify-content-md-center">
+                        <div class="col-md-3 " center>
+                            <input type="text" class="form-control" placeholder="Employee id" autocomplete="off" id="EmployeeId" name="EmployeeId" />
+                        </div>
+                        <div class="col-md-3 " center>
+                            <button type="submit" class="btn btn-primary">Get Employees</button>
+                        </div>
+                    </div>
+                    @if (Model != null)
+                    {
+                        <table class="table table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Contract Type</th>
+                                    <th>Hourly Salary</th>
+                                    <th>Monthly Salary</th>
+                                    <th>Anual Salary</th>
+                                    <th>Role Id</th>
+                                    <th>Role Name</th>
+                                    <th>Role Description</th>
+                                </tr>
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.id</td>
+                                    <td>@item.name</td>
+                                    <td>@item.contractTypeName</td>
+                                    <td>@item.hourlySalary</td>
+                                    <td>@item.monthlySalary</td>
+                                    <td>@item.anualSalary</td>
+                                    <td>@item.roleId</td>
+                                    <td>@item.roleName</td>
+                                    <td>@item.roleDescription</td>
+                                </tr>
+                            }
+                        </table>
+                    }
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
